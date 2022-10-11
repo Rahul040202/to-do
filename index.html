@@ -9,8 +9,9 @@
 <body>
 	<div class="container">
 		<div class="addTask">
-			<input type="text" placeholder="Add a Task (Input)" autocomplete="off" minlength="3" required autofocus>
-			<button>Add</button>
+			<input type="text" id="valid" placeholder="Add a Task (Input)" autocomplete="off" required autofocus>
+			<!--<button>Add</button>-->
+			<input type="submit" name="Add" onclick="checkLength()" />
 		</div>
 
 		<ol class="notCompleted">
@@ -30,6 +31,16 @@
 		input.addEventListener('keyup', (e)=>{
 			(e.keyCode === 13 ? addList(e) : null);
 		})
+		
+		function checkLength(){
+    			var valid = document.getElementById("valid");
+    			if(valid.value.length <= 25 && valid.value.length >= 3){
+        			alert("Success");
+    			}
+    			else{
+        			alert("Make sure the input is between 5-10 characters long")
+    			}
+		}
 
 		function addList(e){
 			const notCompleted = document.querySelector('.notCompleted');
