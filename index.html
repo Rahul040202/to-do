@@ -25,14 +25,13 @@
 
 	<script>
 		
-		
+		const input = document.querySelector('input');
+		const btn = document.querySelector('.addTask > button');
 		
 		function checkLength(){
     			var valid = document.getElementById("valid");
     			if(valid.value.length <= 25 && valid.value.length >= 3){
         			alert("Success");
-				const input = document.querySelector('input');
-				const btn = document.querySelector('.addTask > button');
 				btn.addEventListener('click', addList);
 				input.addEventListener('keyup', (e)=>{
 				(e.keyCode === 13 ? addList(e) : null);
